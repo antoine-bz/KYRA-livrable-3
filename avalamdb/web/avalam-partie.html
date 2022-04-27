@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- **** H E A D **** -->
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Avalam-partie</title>
+
+<style>
+	table {
+		border:1px solid black;
+		padding:3px;
+		margin:auto;	
+		text-align:center;
+		width:60%;
+	}
+
+	.current {
+		background-color:yellow;
+	}
+
+	th,td {
+		border:1px solid black;
+		padding:3px;
+	}
+
+	.even {
+		background-color:lavender;
+	}
+
+	.odd {
+		background-color:lightyellow;
+	}
+
+	.encours {
+		background-color:lightgreen !important;
+	}
+
+	.attente {
+		background-color:lightgrey !important;
+	}
+
+	#dc_-1:hover, .dcoup:hover{
+		cursor:pointer;
+		background-color:lightgreen; 
+	}
+
+	#avalam{
+		width:900px;
+		height:750px;
+		margin:auto;
+		position:relative;
+	}
+
+	#palette {display:none;}
+	.rouge, .jaune {position:absolute;z-index:10; }
+	.indice {position:absolute;top:50px;left:65px;}
+	.nombre {position:absolute;top:22px;left:28px;
+		font-family:courier;font-weight:bold;font-size:18pt;}	
+	.rouge img, .jaune img {width:70px;height:70px;}
+
+</style>
+
+<script src="avalam.js"></script>
+<script src="initial.js"></script>
+<script src="jquery.js"></script>
+
+<script>
+ 
+var filename=false;
+var couleurs = ["aucun","jaune","rouge"];
+var colrefs = []; 
+var feuille; 
+var currentMove = -1;
+var lastMove = -1;
+
+function rejouerCoups(last) {
+	// On rejoue tous les coups en mettant à jour la position dans un objet JSON 
+	var pos = JSON.parse(JSON.stringify(initial));
+	var i, nextC, nbO, coulO, nbD; 
+	for(i=0;i<=last;i++) {
+		nextC = feuille.coups[i];
+		nbO = pos.cols[nextC.o].nb;
+		coulO = pos.cols[nextC.o].couleur;
+		nbD = pos.cols[nextC.d].nb;
+		console.log("dc:" + i + " o:" + nextC.o + " d:" + nextC.d);
+		console.log("nbO:" + nbO + " coulO:" + coulO + " nbD:" + nbD);
+		pos.cols[nextC.o].nb=0; 
+		pos.cols[nextC.d].couleur = coulO; 
+		pos.cols[nextC.d].nb = nbD+nbO;
+	}
+
+	$("#dc_" + last).addClass("current");
+	$("#dc_" + lastMove).removeClass("current");
+	currentMove = last; 
+	lastMove = last; 
+
+	return pos.cols; 
+}
+
+function updatePos(cols) {
+	var i; 
+	for(i=0;i<cols.length;i++){
+		if (cols[i].nb == "0") 
+			colrefs[i].css({display:"none"});
+		else 
+			colrefs[i].css({display:"block"});
+
+		if (cols[i].couleur == "1") {
+			//1: jaune
+				colrefs[i].addClass("jaune"); 
+				$("img",colrefs[i]).attr("src","jaune.png");
+		}
+
+		if (cols[i].couleur == "2") {
+			//2: rouge
+				colrefs[i].addClass("rouge"); 
+				$("img",colrefs[i]).attr("src","rouge.png");
+		}
+
+		$(".nombre",colrefs[i]).html(cols[i].nb);
+		if (cols[i].nb > 1) 
+			$(".nombre",colrefs[i]).css({display:"block"});
+		else 
+			$(".nombre",colrefs[i]).css({display:"none"});	
+	}
+}
+
+function initPos(topo) {
+	var jaune = $(".jaune"); 
+	var rouge = $(".rouge"); 
+	var n; 
+
+	for(i=0;i<topo.length;i++) {
+		if (topo[i].col == "2") 
+			n = rouge.clone(true);  
+		else 
+			n = jaune.clone(true);  
+
+		n.offset({left:(topo[i].cx-82), top:topo[i].cy-139});
+		n.append('<div class="indice">' + i + '</div>');
+		pos = n.offset();
+		//$(".nombre",n).html("1");
+
+		$("#avalam").append(n);
+		colrefs.push(n);
+	}
+}
+
+
+$(document).ready(function(){
+	var url_string = window.location.href; 
+	var url = new URL(url_string);
+	filename = url.searchParams.get("p");
+
+	initPos(topo); 
+
+	$("#dc_-1").click(function(contexte){
+		if (contexte.target.id == "dc_-1")
+			$("#first").click();
+	});
+
+	$(document).on("mouseover",".dcoup",function(){
+		// console.log($(this).data("dc"));
+	});
+
+	$(document).on("click","#first",function(){
+		if (currentMove == -1) return;
+		currentMove = -1;
+		updatePos(rejouerCoups(currentMove));  
+	});
+
+	$(document).on("click","#last",function(){
+		if (currentMove == (feuille.coups.length-1)) return;
+		currentMove = feuille.coups.length-1;
+		console.log(currentMove);
+		updatePos(rejouerCoups(currentMove));
+	});
+
+
+	$(document).on("click","#before",function(){
+		if (currentMove!=-1) currentMove--; else return; 
+		console.log(currentMove);
+		updatePos(rejouerCoups(currentMove));
+	});
+
+	$(document).on("click","#next",function(){
+		if (currentMove!=(feuille.coups.length-1)) currentMove++; else return;
+		console.log(currentMove);
+		updatePos(rejouerCoups(currentMove));
+	});
+
+
+	$(document).on("click",".dcoup",function(){	
+		//console.log($(this).data("dc"));
+		updatePos(rejouerCoups($(this).data("dc"))); 
+	});
+
+	getJson();
+});
+
+function traiterJson(oRep){
+	var i; var r, p, j;
+	var coups = oRep.coups; 
+	var dc; var jdc; 
+	var c=1;
+	feuille = oRep; 
+
+	$("#scoreJ").text(oRep.scoreJ);
+	$("#scoreJ5").text(oRep.scoreJ5);
+	$("#scoreR").text(oRep.scoreR);
+	$("#scoreR5").text(oRep.scoreR5);
+
+	$("#j").text(oRep.j);
+	$("#r").text(oRep.r);
+	$("#ronde").text(oRep.ronde);
+	$("#resultat").text(oRep.resultat);
+
+
+	$("#coups").empty();
+	for(dc=0;dc<coups.length;dc++) {
+
+		if (c%2 ==0) jR = $("<tr>").addClass("even"); 
+		else jR = $("<tr>").addClass("odd");
+
+		jR.append("<td class=\"\">" + (c) +"</td>");
+		jdc = $("<td id=\"dc_"+ dc + "\" class=\"dcoup\">" + coups[dc].o+"-"+ coups[dc].d+"</td>").data("dc",dc);
+		jR.append(jdc); 
+		dc++; 
+
+		if (dc == coups.length) {
+			jR.append("<td class=\"\"></td>"); 
+		} else {
+			jdc = $("<td id=\"dc_"+ dc + "\" class=\"dcoup\">" + coups[dc].o+"-"+ coups[dc].d+"</td>").data("dc",dc);
+			jR.append(jdc);
+		}
+
+		$("#coups").append(jR);
+		c++; 
+	}
+}
+
+function getJson() {
+	var scriptElement = document.createElement('script');
+	scriptElement.src = "../search/" + filename + '?cle=' + Math.random();
+	document.body.appendChild(scriptElement);
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<h1 style="display:inline;">Avalam-partie</h1>
+<p></p>
+
+<table>
+<tr>
+<th>Ronde</th><th>Jaunes</th><th>Rouges</th><th>R&eacute;sultat</th>
+</tr>
+<tr>
+<td id="ronde"></td><td id="j"></td><td id="r"></td><td id="resultat" rowspan="2"></td>
+</tr>
+<tr>
+<th>Scores</th>
+<td><span id="scoreJ"></span> (<span id="scoreJ5"></span>)</td>
+<td><span id="scoreR"></span> (<span id="scoreR5"></span>)</td>
+</tr>
+</table>
+
+<p></p>
+
+<table>
+<tr>
+<th colspan="3" id="dc_-1" class="current">
+<input type="button" id="first" value="<<">
+<input type="button" id="before" value="<">
+<input type="button" id="next" value=">">
+<input type="button" id="last" value=">>">
+</th>
+</tr>
+
+<tr>
+<th>Coup</th>
+<th>Jaunes</th>
+<th>Rouges</th>
+</tr>
+<tbody id="coups">
+</tbody>
+</table>
+
+<div id="avalam">
+	<img src="avalam_numerote.png" />
+</div>
+
+<div id="palette">
+	<div class="jaune col">
+		<img src="jaune.png" />	
+		<div class="nombre"></div>	
+	</div>
+	<div class="rouge col">
+		<img src="rouge.png" />
+		<div class="nombre"></div>
+	</div>
+</div>
+
+
+</body>
+

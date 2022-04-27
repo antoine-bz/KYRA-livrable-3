@@ -1,0 +1,33 @@
+2020 : dans moteur.h, utiliser int pour nbparties, pas octet
+2020 : dans makefile joueurs : 
+
+Ajouter Macro OPTS=-D_POSIX_C_SOURCE=199309L -std=c99
+Ajouter $(OPTS) pour règle %.exe
+
+11/05/2021 : ajout de octet estValide(T_Position p, octet origine, octet destination); dans avalam.h
+11/05/2021 : ajout de -lm dans le makefile des joueurs 
+11/05/2021 : changement des droits du fichier tournoi/web/initial.js 
+
+20/30/2022 : ajout joueurs 2021
+20/30/2022 : maj architecture des fichiers html/js
+
+---
+
+TODO : ajouter numCoup dans une position pour connaître le numéro du coup joué 
+ajouter suivi des scores dans avalam-partie.js
+
+---
+
+Préparation tournoi en ligne (par ssh) : 
+
+cd cmj/tournoi/
+source dyn.sh 
+./bin/moteur.exe 120
+Ctrl+Z
+bg
+disown -h %1
+
+Dans un autre terminal : 
+cd cmj/tournoi/
+source dyn.sh
+nohup ./tournoi2019.sh >/dev/null 2>&1

@@ -1,0 +1,68 @@
+#! /bin/sh 
+
+#	./joueur$numJ.exe "Joueur $numJ" &
+
+./1-avaltoname.exe "Aval(ton)ame" &
+sleep 2
+./2-legende.exe "Legende" &
+sleep 2
+./3-avalam2i.exe "Avalam2i" &
+sleep 2
+./4-yazur.exe "Yazur" &
+sleep 2
+./5-vroum.exe "Vroum" &
+sleep 2
+./6-alexa.exe "Alexa" &
+sleep 2
+./7-aya.exe "Aya" &
+sleep 2
+./8-botabdul.exe "Botabdul" &
+sleep 2
+./9-mark4.exe "Mark4" &
+sleep 2
+./10-chomage.exe "Chomage" &
+sleep 2
+./11-neotheone.exe "Neotheone" &
+sleep 2
+./12-shao.exe "Shao" &
+sleep 2
+./13-ig22qi.exe "IG22QI" &
+sleep 2
+./14-kantaou2i.exe "Kantaou2i" &
+sleep 2
+./15-binks.exe "Binks" &
+sleep 2
+./16-jarvis.exe "Jarvis" &
+sleep 2
+./17-tsavalam.exe "T-savalam" &
+
+
+
+10-chomage.exe
+11-neotheone.exe
+12-shao.exe
+13-ig22qi.exe
+14-kantaou2i-2.exe
+14-kantaou2i-blitz.exe
+14-kantaou2i.exe
+15-binks.exe
+16-jarvis.exe
+17-tsavalam.exe
+1-avaltoname.exe
+2-legende.exe
+3-avalam2i-2.exe
+3-avalam2i.exe
+4-yazur.exe
+5-vroum-2.exe
+5-vroum.exe
+6-alexa.exe
+7-aya.exe
+8-botabdul.exe
+9-mark4.exe
+9-mark5.exe
+alexandre.exe
+finale2019.sh
+kantalam2i-2.exe
+kantalam2i.exe
+tournoi2019.sh
+tournoi2019.sh~

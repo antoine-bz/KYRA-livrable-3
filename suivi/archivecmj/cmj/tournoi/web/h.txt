@@ -1,0 +1,915 @@
+    1  ls
+    2  cd medias/
+    3  ls
+    4  cd ime4/
+    5  ls
+    6  ls >> ../index.html
+    7  su
+    8  sudo su
+    9  su
+   10  ls
+   11  cd medias/
+   12  ls -l
+   13  sftp 172.31.4.220
+   14  ls
+   15  cd medias/
+   16  ls
+   17  cd ime4_app2/
+   18  cd ..
+   19  ls ime4_app2/
+   20  ls ime4_app2/ >> index.html
+   21  sudo su
+   22  su
+   23  cd medias/objets_connectes/
+   24  ls
+   25  cp -R mediaplayer/ ../clok/
+   26  cd ../clok/
+   27  ls
+   28  cd ..
+   29  ls
+   30  vi index.html
+   31  ls
+   32  cd medias/
+   33  ls
+   34  vi index.html 
+   35  ls
+   36  ls clok/
+   37  ls clok/ >> index.html 
+   38  vi index.html 
+   39  emacs index.html 
+   40  ls
+   41  cd medias/
+   42  ls
+   43  ls clok/
+   44  cp -r iam17/mediaplayer/ clok/
+   45  ls
+   46  emacs index.html
+   47  ls iam17/
+   48  ls iam17/ >> index.html
+   49  fg
+   50  ls iam17/ >> index.html
+   51  emacs index.html
+   52  fg
+   53  ls
+   54  cd medias/
+   55  ls
+   56  cd iam17/
+   57  ls
+   58  ls >> ../index.html
+   59  cd ..
+   60  emacs index.html
+   61  ls
+   62  cd medias/
+   63  ls
+   64  ls iam17/ >> index.html
+   65  emacs index.html
+   66  ls
+   67  cd medias/
+   68  ls
+   69  ls -l 
+   70  chmod a+r *.mp4
+   71  ls
+   72  cd medias/
+   73  ls
+   74  ls -l
+   75  cd clok/
+   76  ls
+   77  ls  >> ../index.html
+   78  emacs ../index.html
+   79  ls
+   80  cd medias/
+   81  ls
+   82  ls -l 
+   83  chmod a+r json.mp4 
+   84  history
+   85  history |grep cd
+   86  ls
+   87  cd medias/
+   88  ls
+   89  emacs index.html 
+   90  ls
+   91  ls ime4_app2_2017/
+   92  ls ime4_app2_2017/ >> index.html
+   93  emacs index.html 
+   94  cp -R ime4_app2/mediaplayer ime4_app2_2017/
+   95  emacs index.html 
+   96  cd ime4_app2_2017/
+   97  ls
+   98  cp MEDIA170524080704204/slides/636312100243256634.jpg MEDIA170524084547187/slides/
+   99  cd MEDIA170524084547187/slides/
+  100  ls
+  101  mv 636312100243256634.jpg 636312123473325301.jpg 
+  102  ls
+  103  cd medias/
+  104  ls
+  105  ls objets_connectes/
+  106  ls -l objets_connectes/
+  107  ls
+  108  ls oc_2017/
+  109  ls oc_2017/ >> index.html
+  110  ls mobile_le4_2017/
+  111  ls mobile_le4_2017/ >> index.html
+  112  emacs index.html
+  113  fg
+  114  ls oc_2017/ >> index.html
+  115  fg
+  116  ls oc_2017/ >> index.html
+  117  echo "" >> index.html
+  118  ls mobile_le4_2017/ >> index.html
+  119  emacs index.html
+  120  fg
+  121  ls
+  122  cd medias/
+  123  emacs index.html
+  124  ls
+  125  ls mobile_le4_2017/
+  126  ls mobile_le4_2017/mediaplayer/
+  127  rm -r mobile_le4_2017/mediaplayer/
+  128  cp -R ime4_app2_2017/mediaplayer/ mobile_le4_2017/
+  129  rm -r oc_2017/mediaplayer/
+  130  cp -R ime4_app2_2017/mediaplayer/ oc_2017/
+  131  emacs index.html
+  132  ls
+  133  cd medias/
+  134  ls
+  135  cp -r iam17/mediaplayer/ iam18/
+  136  ls iam18/
+  137  ls
+  138  cat index.html
+  139  ls
+  140  vi index.html
+  141  ls iam18/
+  142  ls iam18/ >> index.html
+  143  emacs index.html
+  144  ls
+  145  cd medias/
+  146  ls
+  147  emacs index.html
+  148  ls
+  149  cd medias/
+  150  ls
+  151  cd iam18/
+  152  cp -r mediaplayer ../clock2018/
+  153  cd ../clock2018/
+  154  ls
+  155  ls >> ../index.html
+  156  emacs ../index.html
+  157  cd ..
+  158  ls -l
+  159  cd clock2018/
+  160  ls
+  161  ls MEDIA180221123211870/
+  162  ls -ld MEDIA180221123211870/
+  163  ls -l MEDIA180221123211870/
+  164  cd ..
+  165  ls
+  166  emacs index.html
+  167  ls
+  168  emacs index.html
+  169  ls
+  170  cd medias/
+  171  ls
+  172  cd clock2018/
+  173  ls
+  174  ls >> ../index.html
+  175  cd ..
+  176  emacs index.html
+  177  cd medias/
+  178  ls
+  179  emacs index.html
+  180  ls
+  181  cd medias/
+  182  ls
+  183  cd clock2018/
+  184  ls
+  185  cp -R mediaplayer/ ../obj2018le3/
+  186  cd ../obj2018le3/
+  187  ls
+  188  ls 
+  189  ls >> ../index.html
+  190  cd ..
+  191  ls
+  192  emacs index.html
+  193  cd -
+  194  pwd >> ../index.html
+  195  fg
+  196  cd -
+  197  emacs index.html
+  198  cd medias/
+  199  ls
+  200  emacs index.html
+  201  ls
+  202  cd medias/
+  203  ls
+  204  cd cmj/
+  205  cd ..
+  206  ls
+  207  cd ..
+  208  rm -r medias/cmj/
+  209  cd /etc/apache2/sites-available/
+  210  ls
+  211  cat 010-medias.conf 
+  212  cat 000-default.conf 
+  213  cp 010-medias.conf 020-cmj.conf
+  214  sudo su 
+  215  su
+  216  ls
+  217  cd cmj/
+  218  ls
+  219  cp avalam-tournoi-2018.zip ../
+  220  cd ..
+  221  ls
+  222  su
+  223  unzip avalam-tournoi-2018.zip 
+  224  ls
+  225  mkdir cmj
+  226  mv avalam-tournoi-2018.zip cmj/
+  227  cd cmj/
+  228  ls
+  229  unzip avalam-tournoi-2018.zip 
+  230  ls
+  231  make
+  232  cd joueur/
+  233  ls
+  234  vi 2-marodJathon.c 
+  235  cd ..
+  236  make clean
+  237  *make
+  238  make
+  239  vi joueur/2-marodJathon.c 
+  240  make clean
+  241  make
+  242  vi joueur/2-marodJathon.c 
+  243  make clean
+  244  make 
+  245  vi joueur/6-emilia.c 
+  246  cd ..
+  247  ls
+  248  mv cmj/avalam-tournoi-2018.zip ./
+  249  ls
+  250  rm -r cmj/
+  251  mkdir cmj
+  252  cp avalam-tournoi-2018.zip cmj/
+  253  cd cmj/
+  254  ls
+  255  unzip avalam-tournoi-2018.zip 
+  256  cd joueur/
+  257  ls
+  258  vi makefile 
+  259  make
+  260  gcc -v
+  261  make
+  262  vi makefile 
+  263  make clean
+  264  make
+  265  apt-cache search c99
+  266  apt-cache search gcc
+  267  vi makefile 
+  268  make
+  269  vi makefile 
+  270  ls
+  271  make clean
+  272  make
+  273  make clean
+  274  cat 1-wololo.c 
+  275  cd ..
+  276  cd include/
+  277  ls
+  278  vi moteur.h 
+  279  cd ..
+  280  make
+  281  vi include/moteur.h 
+  282  make
+  283  cd cmj/
+  284  make clean
+  285  su
+  286  cd tournoi/
+  287  source dyn.sh 
+  288  ./moteur.exe 
+  289  bg
+  290  ps
+  291  cd cmj/
+  292  make
+  293  ps ax
+  294  ps ax | grep moteur
+  295  man nohup
+  296  man bash
+  297  cd tournoi/
+  298  ls
+  299  source dyn.sh 
+  300  ./tournoi2018.sh 
+  301  ps
+  302  ./tournoi2018.sh 
+  303  ps
+  304  man disown
+  305  man nohup
+  306  cd cmj/
+  307  cd tournoi/
+  308  source dyn.sh 
+  309  nohup ./moteur.exe 
+  310  ps ax
+  311  ps ax | grep moteur
+  312  nohup ./moteur.exe 
+  313  cat nohup.out 
+  314  man nohup
+  315  man disown
+  316  su
+  317  ls
+  318  ps
+  319  ./moteur.exe 
+  320  bg
+  321  cd cmj/
+  322  man siginfo_t
+  323  make clean
+  324  make
+  325  whereis siginfo.h
+  326  man siginfo
+  327  su
+  328  cd cmj/tournoi/
+  329  source dyn.sh 
+  330  nohup ./tournoi2018.sh 
+  331  cd cmj/tournoi/
+  332  source dyn.sh 
+  333  ./moteur.exe 1
+  334  bg
+  335  jobs
+  336  disown %1
+  337  ps 
+  338  disown -h %1
+  339  jobs
+  340  cd cmj/tournoi/
+  341  ps ax
+  342  kill 16412
+  343  ./killtournoi2018.sh 
+  344  ps ax
+  345  nohup ./tournoi2018.sh 
+  346  ps ax
+  347  source dyn.sh 
+  348  nohup ./tournoi2018.sh 
+  349  ps ax
+  350  cd cmj/tournoi/
+  351  ls
+  352  ./killtournoi2018.sh 
+  353  ls
+  354  ps ax
+  355  nohup ./tournoi2018.sh 
+  356  ps ax
+  357  nohup ./tournoi2018.sh 
+  358  ls
+  359  source dyn.sh 
+  360  nohup ./tournoi2018.sh 
+  361  cd cmj/tournoi/
+  362  source dyn.sh 
+  363  ./moteur.exe
+  364  source dyn.sh 
+  365  ls
+  366  rm nohup.out 
+  367  ./moteur.exe
+  368  bg
+  369  jobs
+  370  ps ax
+  371  bg
+  372  fg
+  373  ps
+  374  ps ax
+  375  ls
+  376  rm nohup.out 
+  377  ./moteur.exe
+  378  bg
+  379  disown -h %1
+  380  ps ax
+  381  ps ax
+  382  cd cmj/
+  383  cd tournoi/
+  384  ls
+  385  cd web/
+  386  ls -l
+  387  chmod a+r initial.js 
+  388  top
+  389  ps ax
+  390  free
+  391  ps axl
+  392  ps ax
+  393  ps ax | grep moteur
+  394  ps
+  395  ls
+  396  top
+  397  free
+  398  ifconfig
+  399  sudo su
+  400  su
+  401  cd cmj/tournoi/
+  402  ls
+  403  su
+  404  cd cmj/
+  405  ls
+  406  cd tournoi/
+  407  ls
+  408  ls -l
+  409  rm nohup.out 
+  410  ls
+  411  vi tournoi2018.sh 
+  412  su
+  413  df -h
+  414  cd cmj/
+  415  ls
+  416  ls -l
+  417  cd tournoi/
+  418  ls
+  419  ls -l
+  420  ps
+  421  ps ax
+  422  su
+  423  ls
+  424  cd cmj/
+  425  ls
+  426  cd tournoi/
+  427  ls
+  428  su
+  429  cd tou
+  430  cd cmj/tournoi/
+  431  ls
+  432  su
+  433  top
+  434  cd cmj/tournoi/
+  435  ls
+  436  su
+  437  cd cmj/tournoi/
+  438  su
+  439  cd cmj/
+  440  ls
+  441  cd tournoi/
+  442  ls
+  443  cp tournoi2018.sh finale2018.sh
+  444  vi finale2018.sh 
+  445  su
+  446  cd cmj/
+  447  cd tournoi/
+  448  su
+  449  cd cmj/tournoi/
+  450  ls
+  451  su
+  452  cd cmj
+  453  cd ma
+  454  cd manuel/
+  455  ls
+  456  make
+  457  cd ../tournoi/
+  458  ls
+  459  ./manuel.exe 2
+  460  cd medias/
+  461  ls
+  462  cp -R clock2018/mediaplayer/ ./obj_la1_2018/
+  463  cd obj_la1_2018/
+  464  ls
+  465  cd ..
+  466  ls
+  467  ls obj_la1_2018/ >> index.html
+  468  emacs index.html
+  469  ls
+  470  ls obj_la1_2018/
+  471  ls -l obj_la1_2018/
+  472  ls -l clock2018/
+  473  fg
+  474  cd medias/
+  475  ls
+  476  cp -r clock2018/mediaplayer/ ./clock2019/
+  477  cd clock2019/
+  478  ls
+  479  cd ..
+  480  ls clock2019/
+  481  ls clock2019/ >> index.html
+  482  emacs index.html
+  483  ls
+  484  cd cmj/
+  485  ls
+  486  cd ..
+  487  ks
+  488  ls
+  489  cd medias/
+  490  lq
+  491  ls
+  492  ls clock2019/
+  493  cd ..
+  494  ls
+  495  cd medias/
+  496  ls
+  497  emacs index.html
+  498  ls
+  499  ls clock2019/ >> index.html
+  500  fg
+  501  ls
+  502  cd medias/
+  503  ls
+  504  ls clock2019/ >> index.html
+  505  emacs index.html
+  506  cd /home/podcasts/
+  507  ls
+  508  cd cmj2018/
+  509  ls
+  510  cd moteur/
+  511  less moteur.c
+  512  cd ../../
+  513  cd cmj
+  514  ls
+  515  cd moteur/
+  516  ls
+  517  less moteur.c
+  518  cd ../../cmj2018/
+  519  ls
+  520  make clean
+  521  make
+  522  ls
+  523  cat makefile 
+  524  cd joueur/
+  525  ls
+  526  cat makefile 
+  527  /sbin/ifconfig 
+  528  cat ../include/moteur.h 
+  529  make clean
+  530  cd ..
+  531  make clean
+  532  make
+  533  cat include/moteur.h 
+  534  cd /home/cmj/
+  535  cd /home/podcasts/
+  536  cd cmj
+  537  cd joueurs/
+  538  ls
+  539  vi makefile 
+  540  cd ..
+  541  make clean
+  542  make
+  543  vi joueurs/1-avaltoname.c 
+  544  make clean
+  545  make
+  546  vi joueurs/1-avaltoname.c 
+  547  make clean
+  548  make
+  549  vi makefile 
+  550  vi joueurs/makefile 
+  551  make clean
+  552  make
+  553  vi joueurs/makefile 
+  554  make clean
+  555  make
+  556  cat include/moteur.h 
+  557  make clean
+  558  make
+  559  man pthread_t
+  560  vi include/moteur.h 
+  561  make clean
+  562  make
+  563  cd joueurs/
+  564  vi makefile 
+  565  cd /home/podcasts/cmj
+  566  cd joueurs/
+  567  vi makefile 
+  568  cd ..
+  569  make clean
+  570  make
+  571  cd tournoi/
+  572  source dyn.sh 
+  573  cat ../../cmj2018/tournoi/tournoi2018.sh 
+  574  ls ../../cmj2018/manuel/
+  575  cat ../joueurs/makefile 
+  576  cat ../include/moteur.h 
+  577  ls
+  578  cat ./tournoi2019.sh 
+  579  cat ../../cmj2018/tournoi/tournoi2018.sh 
+  580  ls
+  581  nohup ./tournoi2019.sh 
+  582  ps ax
+  583  cd /home/podcasts/cmj/tournoi/
+  584  ls
+  585  ls -l
+  586  rm nohup.out 
+  587  #nohup command >/dev/null 2>&1
+  588  ps ax | grep "\./bin/"
+  589  ps ax | grep "\./bin/" | xargs kill 
+  590  ps ax
+  591  #nohup ./tournoi2019.sh >/dev/null 2>&1
+  592  source dyn.sh 
+  593  nohup ./tournoi2019.sh >/dev/null 2>&1
+  594  cd /home/podcasts/cmj
+  595  ls
+  596  cd tournoi/
+  597  ls
+  598  cd web
+  599  ls
+  600  ls -l
+  601  chmod a+r *
+  602  ls -l
+  603  cd /home/podcasts/cmj
+  604  cd tournoi/
+  605  source dyn.sh 
+  606  ps ax
+  607  kill 26635
+  608  ps ax
+  609  ps ax | grep moteur
+  610  ./bin/moteur.exe 3
+  611  bg
+  612  disown -h %1
+  613  cd /home/podcasts/cmj
+  614  mkdir resultats
+  615  ls
+  616  rm -r resultats/
+  617  mkdir resultats
+  618  cp -R tournoi/web/ resultats/t1
+  619  cd resultats/t1/
+  620  ls
+  621  rm -rf exemples/ mkDiag.exe 
+  622  ls
+  623  cd ..
+  624  cd tournoi/web/
+  625  ls
+  626  mkdir resultats
+  627  cd resultats/
+  628  mv ../../../resultats/t1./
+  629  ls
+  630  mv ../../../resultats/t1 ./
+  631  ls
+  632  cd /home/podcasts/cmj/tournoi/web/
+  633  ls
+  634  cd resultats/
+  635  ls
+  636  cp -r tb/ t2
+  637  ls
+  638  ls
+  639  ls data/
+  640  rm -r data/
+  641  cp -r ../../data/ ./
+  642  ls
+  643  ls data/
+  644  cd ../../
+  645  cd ..
+  646  source dyn.sh 
+  647  ps ax
+  648  ./bin/moteur.exe 120
+  649  bg
+  650  disown -h %1
+  651  cd /home/podcasts/cmj
+  652  ls
+  653  cd tournoi/
+  654  source dyn.sh 
+  655  vi tournoi2019.sh 
+  656  ls
+  657  nohup ./tournoi2019.sh >/dev/null 2>&1
+  658  cd /home/
+  659  ls
+  660  cd podcasts/
+  661  ls
+  662  cd medias/
+  663  ls
+  664  cd clock2019/
+  665  ls
+  666  cp -r mediaplayer/ ../android2019/
+  667  cd ..
+  668  ls
+  669  cat index.html
+  670  ls android2019/ >> index.html
+  671  emacs -nw index.html
+  672  cd ..
+  673  ls
+  674  cd cmj
+  675  ls
+  676  ls joueurs/
+  677  vi makefile 
+  678  cd joueurs/
+  679  vi makefile 
+  680  cd ..
+  681  cd tournoi/
+  682  ls
+  683  cd web/
+  684  ls
+  685  tar -zxf t1 resultats/t1/*
+  686  tar -zcf t1.tar.gz resultats/t1/*
+  687  cd ..
+  688  rm tournoi/web/t1.tar.gz 
+  689  make clean
+  690  make
+  691  cd tournoi/web/
+  692  ls
+  693  cd ..
+  694  ls
+  695  vi tournoi2019.sh 
+  696  ls joueurs2018/
+  697  ls
+  698  ls bin/
+  699  source dyn.sh 
+  700  nohup ./tournoi2019.sh >/dev/null 2>&1
+  701  ls
+  702  cd web/
+  703  ls
+  704  cd resultats/
+  705  ls
+  706  rmdir tb/
+  707  cp -r t1 tb
+  708  cd tb/
+  709  ls
+  710  rm -r data/
+  711  cp ../data.zip ./
+  712  ls
+  713  unzip data.zip 
+  714  ls
+  715  cd ..
+  716  ls
+  717  rm data.zip 
+  718  cd tb/
+  719  ls
+  720  ls data
+  721  rm data.zip 
+  722  cd cmj/tournoi/
+  723  source dyn.sh 
+  724  ls
+  725  cat finale2019.sh 
+  726  nohup ./finale2019.sh >/dev/null 2>&1
+  727  ls
+  728  cd cmj
+  729  ls
+  730  cd resultats/
+  731  cd ..
+  732  cd joueurs/
+  733  make
+  734  ls
+  735  vi makefile 
+  736  cd ;.
+  737  cd ..
+  738  make
+  739  cd -
+  740  pwd
+  741  cd cmj
+  742  ls
+  743  make
+  744  cd tournoi/
+  745  source dyn.sh 
+  746  ls
+  747  ./bin/moteur.exe 30
+  748  bg
+  749  cd cmj
+  750  history | grep dis*
+  751  disown -h %1
+  752  cd cmj
+  753  ls
+  754  ls joueurs/
+  755  cd tournoi/
+  756  cat tournoi2019.sh 
+  757  cat finale2019.sh 
+  758  cd cmj
+  759  cd tournoi/
+  760  source dyn.sh 
+  761  cd cmj
+  762  vi joueurs/makefile 
+  763  make
+  764  cd tournoi/
+  765  source dyn.sh 
+  766  ls
+  767  cat finale2019.sh >> tournoi2019.sh 
+  768  vi tournoi2019.sh 
+  769  cd cmj/tournoi/
+  770  vi tournoi2019.sh 
+  771  ls bin/
+  772  vi tournoi2019.sh 
+  773  ./bin/moteur.exe 120
+  774  source dyn.sh 
+  775  ./bin/moteur.exe 120
+  776  bg
+  777  disown -h %1
+  778  jobs
+  779  cd cmj/tournoi/
+  780  ls
+  781  source dyn.sh 
+  782  ls
+  783  cat tournoi2019.sh 
+  784  nohup ./tournoi2019.sh >/dev/null 2>&1
+  785  ls
+  786  cd cmj
+  787  ls
+  788  cd tournoi/
+  789  ls
+  790  source dyn.sh 
+  791  ls
+  792  vi tournoi2019.sh 
+  793  cd web/
+  794  ls
+  795  mv avalam-tournoi.html avalam-tournoi2.html 
+  796  vi avalam-tournoi.html 
+  797  cd ..
+  798  ls
+  799  cd cmj
+  800  ls
+  801  cd tournoi/
+  802  source dyn.sh 
+  803  ls
+  804  ls bin/
+  805  cd cmj
+  806  cd tournoi/
+  807  source dyn.sh 
+  808  ls
+  809  cd cmj/tournoi/
+  810  source dyn.sh 
+  811  ./bin/moteur.exe 120
+  812  ps ax
+  813  ./bin/moteur.exe 120
+  814  bg
+  815  disown -h %1
+  816  cd cmj/tournoi/
+  817  source dyn.sh 
+  818  cat tournoi2019.sh 
+  819  nohup ./tournoi2019.sh >/dev/null 2>&1
+  820  ls
+  821  cd medias/
+  822  ls
+  823  ls obj_2019/
+  824  ls obj_2019/ >> index.html
+  825  emacs -nw index.html
+  826  cp -r android2019/mediaplayer ./obj_2019/
+  827  emacs -nw index.html
+  828  cd medias/
+  829  ls obj_2019/
+  830  ls obj_2019/ >> index.html
+  831  emacs -nw index.html 
+  832  ifconfig
+  833  ip address show
+  834  cat /etc/interfaces
+  835  whereis interfaces
+  836  locate ifup
+  837  cd /etc/network/
+  838  ls
+  839  cat interfaces
+  840  vi interfaces
+  841  sudo vi interfaces
+  842  su
+  843  ip address show
+  844  cd /etc/network/
+  845  ls
+  846  cat interfaces
+  847  ip address show
+  848  vi interfaces
+  849  su
+  850  cd medias/
+  851  ls
+  852  emacs index.html
+  853  ls
+  854  rm -rf g3/mediaplayer/
+  855  cp -R obj_2019/mediaplayer/ g3/
+  856  ls g3/
+  857  cd medias/
+  858  cd screencasts/
+  859  ls
+  860  emacs index.html 
+  861  ls
+  862  ls -l 
+  863  chmod -R a+r * 
+  864  ls -l 
+  865  emacs index.html 
+  866  ls
+  867  cd cmj
+  868  ls
+  869  cd ..
+  870  ls
+  871  mv cmj cmj2019
+  872  unzip cmj2020.zip 
+  873  ls
+  874  rm -r avalamdb/ duel/ genPositions/ include/ joueurs/ libavalam/ libjoueur/ makefile moteur/ README tournoi/
+  875  ls
+  876  mkdir cmj 
+  877  mv cmj2020.zip cmj
+  878  cd cmj
+  879  ls
+  880  unzip cmj2020.zip 
+  881  ls
+  882  make
+  883  cd joueurs/
+  884  ls
+  885  emacs 10-avalamHub.c 
+  886  make clean
+  887  cd ..
+  888  make clean
+  889  make
+  890  emacs joueurs/7-patrickBalkalam.c 
+  891  make clean
+  892  make
+  893  emacs joueurs/1-savalami.c 
+  894  make clean
+  895  make
+  896  emacs joueurs/1-savalami.c 
+  897  make clean
+  898  make
+  899  emacs joueurs/8-savalami.c 
+  900  emacs joueurs/8-AvalamKedavra.c 
+  901  make clean
+  902  make
+  903  emacs joueurs/12-sidAvalam.c 
+  904  make clean
+  905  make
+  906  cd ..
+  907  ls
+  908  tar -zcf archive2020.tar.gz cmj/*
+  909  ls
+  910  ls cmj2019/
+  911  cat /etc/apache2/sites-available/020-cmj.conf 
+  912  ls cmj/tournoi/web/
+  913  cat cmj/tournoi/web/avalam-tournoi.html 
+  914  ls
+  915  history > cmj/h.txt

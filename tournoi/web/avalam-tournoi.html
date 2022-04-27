@@ -1,0 +1,206 @@
+<head>
+
+<style>
+
+table {
+	width:60%;
+	border:1px solid black;
+	padding:3px;
+	margin:auto;	
+	text-align:center;
+}
+
+a {
+	color:black;
+}
+
+th,td {
+	border:1px solid black;
+	padding:3px;
+}
+
+.even {
+	background-color:lavender;
+}
+
+.odd {
+	background-color:lightyellow;
+}
+
+.encours {
+	background-color:lightgreen !important;
+}
+
+.attente {
+	background-color:lightgrey !important;
+}
+
+</style>
+
+<script src="js/jquery.js"></script>
+
+<script>
+ 
+var position = [];
+
+
+var filename="tournoi.js";
+
+var refreshtime=1;
+
+$(document).ready(function(){
+	$("#filename").val(filename);
+	$("#refreshtime").val(refreshtime);
+
+	window.setTimeout(refresh,0);
+
+	$("#filename").change(function (){
+		filename = $(this).val();
+		window.setTimeout(refresh,refreshtime*1000);
+		$(this).animate({opacity: 0.25},1000, function(){
+			$(this).animate({opacity: 1});
+		});
+	});
+
+	$("#refreshtime").change(function (){
+		refreshtime = $(this).val();
+		$(this).animate({opacity: 0.25},1000, function(){
+			$(this).animate({opacity: 1});
+		});
+	});
+
+});
+
+/*
+
+traiterJson({"joueurs":[
+	{"nom":"Joueur 1","score":3.00},
+	{"nom":"Joueur 2","score":3.00},
+	{"nom":"Joueur 3","score":6.00},
+	{"nom":"exempt","score":0.00}
+],
+"rondes":[
+	{"ronde":1,
+	"parties":[
+		{"j":"Joueur 1","r":"Joueur 2","resultat":"0-1","scoreJ":4,"scoreJ5":4,"scoreR":6,"scoreR5":4},
+		{"j":"Joueur 3","r":"exempt","resultat":"1-0","scoreJ":1,"scoreJ5":0,"scoreR":0,"scoreR5":0}
+	]},
+	{"ronde":2,
+	"parties":[
+		{"j":"Joueur 1","r":"Joueur 3","resultat":"0-1","scoreJ":3,"scoreJ5":1,"scoreR":8,"scoreR5":8},
+		{"j":"exempt","r":"Joueur 2","resultat":"0-1","scoreJ":0,"scoreJ5":0,"scoreR":1,"scoreR5":0}
+	]},
+
+*/
+
+
+function traiterJson(oRep){
+	var i; var r, p, j;
+	var joueurs = oRep.joueurs; 
+	joueurs.sort(function(a, b){return b.score - a.score});
+
+	$("#joueurs").empty();
+	for(i=0;i<oRep.joueurs.length;i++) {
+		if (oRep.joueurs[i].nom == "exempt") continue;
+		jR = $("<tr>"); 
+		jR.append("<td class=\"classement\">" + (i+1) +"</td>");
+		jR.append("<td class=\"nom\">" + oRep.joueurs[i].nom +"</td>"); 
+		jR.append("<td class=\"score\">" + oRep.joueurs[i].score +"</td>"); 
+		$("#joueurs").append(jR);
+	}
+
+	p=0;
+	$("#tournoi").empty();
+	for(r=0;r<oRep.rondes.length;r++) {
+		for(j=0;j<oRep.rondes[r].parties.length; j++) {
+			p++;
+			var nextP = oRep.rondes[r].parties[j]; 
+
+			if (r%2 ==0) jR = $("<tr>").addClass("even"); 
+			else jR = $("<tr>").addClass("odd");
+
+			if (nextP.statut == "attente") jR.addClass("attente");
+			if (nextP.statut == "encours") jR.addClass("encours");
+
+
+			jR.append("<td>" + (r+1) +"</td>");
+			jR.append("<td>" + p +"</td>");
+			jR.append("<td>" + nextP.j +"</td>");
+
+			if (nextP.statut == "encours"){
+				jR.append('<td colspan="3"><a  href="avalam-direct.html?p=' + (p-1) + '">direct</a></td>');
+			}
+			else if (nextP.statut == "termine") {
+				jR.append("<td>" + nextP.scoreJ + " (" + nextP.scoreJ5 + ")" +"</td>");
+				jR.append('<td><a  href="avalam-partie.html?p=' + (p-1) + '">' + nextP.resultat +"</a></td>");
+				jR.append("<td>" + nextP.scoreR + " (" + nextP.scoreR5 + ")" +"</td>");
+			}
+			else {
+				jR.append("<td>");jR.append("<td>");jR.append("<td>");
+			}
+
+			jR.append("<td>" + nextP.r +"</td>");
+			$("#tournoi").append(jR); 
+		}
+	}
+
+
+	window.setTimeout(refresh,refreshtime*1000);
+}
+
+function refresh() {
+	console.log("refresh");
+	getJson();
+}
+
+function getJson() {
+	var scriptElement = document.createElement('script');
+	scriptElement.src = "data/" + filename + '?cle=' + Math.random();
+	document.body.appendChild(scriptElement);
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<h1>Avalam-tournoi</h1>
+Sync avec fichier : <input type="text" id="filename"/> <br/>
+Fr&eacute;quence raffraichissement : <input type="text" id="refreshtime"/> <br/>
+
+<h2>Classement</h2>
+
+<table>
+<tr>
+<th>Place</th>
+<th>Nom</th>
+<th>Points</th>
+</tr>
+<tbody id="joueurs">
+</tbody>
+</table>
+
+
+<h2>Tournoi</h2>
+
+
+<table>
+<tr>
+<th>Ronde</th>
+<th>Partie</th>
+<th>Jaunes</th>
+<th>Score</th>
+<th>R&eacute;sultat</th>
+<th>Score</th>
+<th>Rouges</th>
+</tr>
+
+<tbody id="tournoi">
+</tbody>
+</table>
+
+
+</body>
+

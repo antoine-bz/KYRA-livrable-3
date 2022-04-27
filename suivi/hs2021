@@ -1,0 +1,1000 @@
+ 1034  ls
+ 1035  cd ..
+ 1036  ls
+ 1037  cd cmj2019/
+ 1038  ls
+ 1039  cd joueurs/
+ 1040  ls
+ 1041  cat makefile 
+ 1042  ls
+ 1043  cd ..
+ 1044  ls
+ 1045  tar -zcf archive2019.tar.gz cmj2019/*
+ 1046  cd cmj2019/
+ 1047  ls
+ 1048  cd joueurs/
+ 1049  cat humain1.c 
+ 1050  cat ../include/moteur.h 
+ 1051  cd ..
+ 1052  ls
+ 1053  rm -r cmj2020/
+ 1054  ls
+ 1055  cd cmj
+ 1056  ls
+ 1057  cd tournoi/
+ 1058  ls
+ 1059  source dyn.sh 
+ 1060  vi tournoi2020.sh 
+ 1061  ps ax
+ 1062  ps
+ 1063  kill 11193
+ 1064  ls /dev/shm/
+ 1065  ls
+ 1066  ps ax | grep moteur
+ 1067  ls
+ 1068  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1069  cd web/
+ 1070  cd data/
+ 1071  ls
+ 1072  cat tournoi.js 
+ 1073  ps ax
+ 1074  ps
+ 1075  kill 12065
+ 1076  kill 12066
+ 1077  kill 12067
+ 1078  kill 12068
+ 1079  kill 12069
+ 1080  ls
+ 1081  cd ..
+ 1082  ls
+ 1083  cp tournoi2020.sh test.sh 
+ 1084  vi test.sh 
+ 1085  ./test.sh 
+ 1086  ps
+ 1087  vi test.sh 
+ 1088  rm test.sh 
+ 1089  ls
+ 1090  cp tournoi2020.sh test.sh
+ 1091  emacs test.sh 
+ 1092  ./test.sh
+ 1093  ps
+ 1094  kill 12206
+ 1095  vi test.sh
+ 1096  ./test.sh
+ 1097  cd ../
+ 1098  cd joueurs/
+ 1099  ls
+ 1100  vi 12-sidAvalam.c
+ 1101  emacs 12-sidAvalam.c
+ 1102  cd ..
+ 1103  make clean
+ 1104  make
+ 1105  vi tournoi/tournoi2020.sh 
+ 1106  cd tournoi/
+ 1107  ps
+ 1108  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1109  p
+ 1110  ps
+ 1111  kill 12771 12772 12773 12774 12775 12776
+ 1112  ps
+ 1113  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1114  ps
+ 1115  ps ax
+ 1116  cd cmj
+ 1117  ps ax | grep "./bin"
+ 1118  ps ax | grep "./bin" > 2kill
+ 1119  emacs 2kill 
+ 1120  cat 2kill | xargs kill 
+ 1121  ps
+ 1122  cd tournoi/
+ 1123  ls
+ 1124  ./bin/moteur.exe 30
+ 1125  source dyn.sh 
+ 1126  ./bin/moteur.exe 30
+ 1127  ps
+ 1128  ./bin/moteur.exe 3
+ 1129  cd ..
+ 1130  ls
+ 1131  cd joueurs/
+ 1132  ls
+ 1133  cat makefile 
+ 1134  ls
+ 1135  make clean
+ 1136  ls
+ 1137  rm *.c
+ 1138  ls
+ 1139  rm *~
+ 1140  ls
+ 1141  emacs makefile
+ 1142  ls
+ 1143  mv makefile2 makefile2019
+ 1144  ls
+ 1145  cd ..
+ 1146  make clean
+ 1147  make
+ 1148  cat makefile 
+ 1149  cd joueurs/
+ 1150  cat makefile
+ 1151  cd ..
+ 1152  make clean
+ 1153  make
+ 1154  cd joueurs/
+ 1155  ls
+ 1156  cat humain1.c 
+ 1157  cat ../include/moteur.h 
+ 1158  vi ../include/moteur.h 
+ 1159  cd ..
+ 1160  ls
+ 1161  make
+ 1162  ls
+ 1163  rm 2kill*
+ 1164  ls
+ 1165  cd tournoi/
+ 1166  ls
+ 1167  source dyn.sh 
+ 1168  ./bin/moteur.exe 30 
+ 1169  ps 
+ 1170  ./bin/moteur.exe 30 
+ 1171  ls
+ 1172  ls /dev/shm/
+ 1173  ./bin/moteur.exe 2
+ 1174  ps
+ 1175  ./bin/moteur.exe 2
+ 1176  ps
+ 1177  ./bin/moteur.exe 2
+ 1178  ps
+ 1179  ls /dev/shm/
+ 1180  ./bin/moteur.exe 30
+ 1181  bg
+ 1182  ps
+ 1183  disown -h %1
+ 1184  cd cmj2020/
+ 1185  ls
+ 1186  cd libjoueur/
+ 1187  ls
+ 1188  emacs libjoueur.c 
+ 1189  cd ..
+ 1190  ls
+ 1191  cd tournoi/
+ 1192  ls
+ 1193  cd run/
+ 1194  ls
+ 1195  cat 16388 
+ 1196  cat 16389
+ 1197  cat moteur.pid 
+ 1198  fg
+ 1199  cd cmj2020/
+ 1200  ls
+ 1201  cd tournoi/
+ 1202  ./bin/moteur.exe 1
+ 1203  source dyn.sh 
+ 1204  ./bin/moteur.exe 1
+ 1205  cd ..
+ 1206  ls
+ 1207  make clean
+ 1208  make debug
+ 1209  ./bin/moteur.exe 1
+ 1210  cd -
+ 1211  ./bin/moteur.exe 1
+ 1212  ps 
+ 1213  ./bin/moteur.exe 1
+ 1214  cd -
+ 1215  make clea
+ 1216  make clean
+ 1217  make debug
+ 1218  cd -
+ 1219  ./bin/moteur.exe 1
+ 1220  cd -
+ 1221  cd joueurs/
+ 1222  ls
+ 1223  mv 12-sidAvalam.c 12-debug.c
+ 1224  vi makefile
+ 1225  make clean
+ 1226  make
+ 1227  cd -
+ 1228  ./bin/moteur.exe 1
+ 1229  cd -
+ 1230  ./bin/moteur.exe 1
+ 1231  cd ..
+ 1232  cd tournoi/
+ 1233  ./bin/moteur.exe 1
+ 1234  cd -
+ 1235  make clean
+ 1236  make 
+ 1237  make clean
+ 1238  make debug
+ 1239  cd -
+ 1240  ./bin/moteur.exe 1
+ 1241  cd joueurs201
+ 1242  cd .. 
+ 1243  cd joueurs/20
+ 1244  cd joueurs/
+ 1245  ls
+ 1246  emacs 12-debug.c
+ 1247  cd ..
+ 1248  make clean
+ 1249  make debug
+ 1250  cd tournoi/
+ 1251  ./bin/moteur.exe 1
+ 1252  cd joueurs201
+ 1253  cd ..
+ 1254  cd joueurs/
+ 1255  ls
+ 1256  emacs 12-debug.c
+ 1257  fg
+ 1258  cd -
+ 1259  make clean
+ 1260  make
+ 1261  make debug 
+ 1262  fg
+ 1263  make clean
+ 1264  make debug
+ 1265  cd tournoi/
+ 1266  ./bin/moteur.exe 1
+ 1267  fg
+ 1268  cd -
+ 1269  make clean
+ 1270  make debug
+ 1271  cd -
+ 1272  ./bin/moteur.exe 1
+ 1273  fg
+ 1274  cd -
+ 1275  make clean
+ 1276  make debug
+ 1277  fg
+ 1278  cd cmj2020/tournoi/
+ 1279  ls
+ 1280  ps ax
+ 1281  source dyn.sh 
+ 1282  ./bin/12-sidAvalam.exe SID
+ 1283  ps
+ 1284  ./bin/humain2.exe TOM
+ 1285  ps
+ 1286  ./bin/12-sidAvalam.exe SID
+ 1287  ps
+ 1288  ./bin/12-debug.exe DEBUG
+ 1289  ps
+ 1290  ./bin/12-debug.exe DEBUG
+ 1291  ps
+ 1292  ./bin/12-debug.exe DEBUG
+ 1293  cd cmj
+ 1294  ls
+ 1295  cd tournoi/
+ 1296  ls
+ 1297  cd web/
+ 1298  ls -l
+ 1299  chmod a+r * 
+ 1300  ls -l
+ 1301  cd ../..
+ 1302  ls
+ 1303  cd ..
+ 1304  ls
+ 1305  top
+ 1306  ls
+ 1307  mkdir cmj2020
+ 1308  cp cmj/cmj2020.zip cmj2020/
+ 1309  cd cmj2020/
+ 1310  ls
+ 1311  unzip cmj2020.zip 
+ 1312  ls
+ 1313  cat ../cmj2019/joueurs/makefile 
+ 1314  emacs joueurs/makefile 
+ 1315  ls
+ 1316  cat ../cmj2019/include/moteur.h 
+ 1317  emacs include/moteur.h 
+ 1318  make
+ 1319  cd tournoi/
+ 1320  ls
+ 1321  vi tournoi2020.sh 
+ 1322  ls
+ 1323  cd ..
+ 1324  ls
+ 1325  cd ..
+ 1326  ls
+ 1327  cp archive2019.tar.gz cmj/tournoi/web/
+ 1328  ls
+ 1329  cd cmj2020/
+ 1330  ls
+ 1331  cd joueurs/
+ 1332  ls
+ 1333  vi makefile
+ 1334  cd ..
+ 1335  make clean
+ 1336  make
+ 1337  cd tournoi/
+ 1338  ls
+ 1339  cp tournoi2020.sh test.sh
+ 1340  emacs test.sh 
+ 1341  source dyn.sh 
+ 1342  ls
+ 1343  ./test.sh
+ 1344  ps
+ 1345  kill 15064
+ 1346  ps
+ 1347  ./bin/12-sidAvalam-v1.exe SIDV1
+ 1348  ps
+ 1349  ./bin/joueur5.exe JOUEUR5
+ 1350  ps
+ 1351  kill 15519
+ 1352  ./bin/joueur5.exe JOUEUR5
+ 1353  ls bin/
+ 1354  ./bin/joueur5.exe JOUEUR5
+ 1355  ps
+ 1356  ./bin/joueur5.exe JOUEUR5
+ 1357  ps
+ 1358  ./bin/joueur5.exe JOUEUR5
+ 1359  ps
+ 1360  ./bin/joueur5.exe JOUEUR5
+ 1361  ls
+ 1362  cd cmj
+ 1363  ls
+ 1364  cd tournoi/
+ 1365  ls
+ 1366  cd web/
+ 1367  ls
+ 1368  cd archives/
+ 1369  ls
+ 1370  mv 1s 1s_tb
+ 1371  mv 30s 30s_tb
+ 1372  cp ../data/ 30s_tournoi1
+ 1373  cp ../data 30s_tournoi1
+ 1374  cp -r ../data 30s_tournoi1
+ 1375  ls
+ 1376  ls 30s_t
+ 1377  ls 30s_tournoi1/
+ 1378  cd ..
+ 1379  ls
+ 1380  cd ..
+ 1381  ls
+ 1382  cd ..
+ 1383  ls
+ 1384  cd joueurs/
+ 1385  ls
+ 1386  rm *~
+ 1387  ls
+ 1388  emacs 12-sidAvalam.c 
+ 1389  cd ../tournoi/
+ 1390  ls
+ 1391  emacs tournoi2020.sh 
+ 1392  ls
+ 1393  cd joueurs2019/
+ 1394  ls
+ 1395  emacs tournoi2019.sh 
+ 1396  ls 
+ 1397  ls >> tournoi2019.sh
+ 1398  fg
+ 1399  emacs tournoi2019.sh
+ 1400  cd ..
+ 1401  ls
+ 1402  cd joueurs2018
+ 1403  ls
+ 1404  cp ../tournoi2020.sh ./finale2018.sh
+ 1405  lq
+ 1406  ls
+ 1407  ls >> finale2018.sh 
+ 1408  emacs finale2018.sh 
+ 1409  ls
+ 1410  cd ..
+ 1411  ls
+ 1412  cd joueurs2019
+ 1413  ls
+ 1414  cat finale2019.sh 
+ 1415  cat tournoi2019.sh >> finale2019.sh 
+ 1416  emacs finale2019.sh 
+ 1417  ls
+ 1418  cd ..
+ 1419  ls
+ 1420  ls joueurs2018/
+ 1421  cd joueurs2018
+ 1422  cat finale2018.sh
+ 1423  vi finale2018.sh
+ 1424  cd ..
+ 1425  source dyn.sh 
+ 1426  ls
+ 1427  ./bin/moteur.exe 3
+ 1428  ls /dev/shm/
+ 1429  ./bin/moteur.exe 3
+ 1430  ps
+ 1431  ./bin/moteur.exe 3
+ 1432  ls
+ 1433  ps
+ 1434  ./bin/moteur.exe 3
+ 1435  cd ..
+ 1436  make clean 
+ 1437  make debug
+ 1438  ps
+ 1439  ./bin/moteur.exe 3
+ 1440  cd tournoi/
+ 1441  ./bin/moteur.exe 3
+ 1442  ps u
+ 1443  kill 22050
+ 1444  ps
+ 1445  ./bin/moteur.exe 3
+ 1446  ps
+ 1447  ./bin/moteur.exe 3
+ 1448  ps
+ 1449  ./bin/moteur.exe 3
+ 1450  cat finale2019.sh
+ 1451  cd ../joueurs/
+ 1452  ls
+ 1453  emacs makefile
+ 1454  cd ..
+ 1455  make clean
+ 1456  make debug
+ 1457  cd tournoi/
+ 1458  ls bin/
+ 1459  cd ../joueurs/
+ 1460  ls
+ 1461  emacs makefile
+ 1462  cd -
+ 1463  cd ..
+ 1464  make clean
+ 1465  make
+ 1466  ps
+ 1467  ./bin/moteur.exe 3
+ 1468  cd tournoi/
+ 1469  ./bin/moteur.exe 3
+ 1470  bg
+ 1471  disown -h %1
+ 1472  cd cmj
+ 1473  ls
+ 1474  cd tournoi/
+ 1475  source dyn.sh 
+ 1476  ls
+ 1477  history | grep nohup
+ 1478  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1479  ls
+ 1480  cd joueurs2018/
+ 1481  ls
+ 1482  nohup ./finale2018.sh >/dev/null 2>&1
+ 1483  ./finale2018.sh
+ 1484  ps
+ 1485  cp finale2018.sh ../
+ 1486  cd ..
+ 1487  cd joueurs2019/
+ 1488  cp ./finale2019.sh ../
+ 1489  emacs finale2018.sh
+ 1490  cd ..
+ 1491  ls
+ 1492  emacs finale2018.sh 
+ 1493  emacs finale2019.sh 
+ 1494  ls
+ 1495  nohup ./finale2018.sh >/dev/null 2>&1
+ 1496  nohup ./finale2019.sh >/dev/null 2>&1
+ 1497  ps
+ 1498  ps > kill.sh
+ 1499  emacs kill.sh 
+ 1500  cat kill.sh | xargs kill
+ 1501  ps
+ 1502  ls /dev/shm/
+ 1503  su
+ 1504  ps
+ 1505  nohup ./finale2018.sh >/dev/null 2>&1
+ 1506  ps
+ 1507  kill 21307
+ 1508  nohup ./finale2019.sh >/dev/null 2>&1
+ 1509  ps
+ 1510  kill 21349
+ 1511  kill 21350
+ 1512  kill 21351
+ 1513  ls
+ 1514  ls /dev/shm
+ 1515  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1516  ps
+ 1517  kill 21404
+ 1518  kill 21405
+ 1519  kill 21406
+ 1520  kill 21407
+ 1521  kill 21408
+ 1522  ps
+ 1523  ls /dev/shm
+ 1524  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1525  nohup ./finale2018.sh >/dev/null 2>&1
+ 1526  nohup ./finale2019.sh >/dev/null 2>&1
+ 1527  ps
+ 1528  ps > kill.sh
+ 1529  emacs kill.sh
+ 1530  ps
+ 1531  cat kill.sh | xargs kill
+ 1532  ls
+ 1533  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1534  nohup ./finale2019.sh >/dev/null 2>&1
+ 1535  ps
+ 1536  ps > kill.sh
+ 1537  emacs kill.sh 
+ 1538  cat kill.sh | xargs kill
+ 1539  ls
+ 1540  cp joueurs2018/*.exe bin/
+ 1541  cp joueurs2019/*.exe bin/ 
+ 1542  ls bin 
+ 1543  emacs finale2018.sh
+ 1544  emacs finale2019.sh
+ 1545  ps
+ 1546  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1547  nohup ./finale2019.sh >/dev/null 2>&1
+ 1548  ls bin 
+ 1549  ps
+ 1550  ps | grep exe
+ 1551  ps
+ 1552  ./bin/alexandre.exe Alexandre
+ 1553  bg
+ 1554  ./bin/alexandre.exe Alexandre
+ 1555  bg
+ 1556  ps
+ 1557  ps > kill.sh
+ 1558  emacs kill.sh
+ 1559  cat kill.sh | xargs kill
+ 1560  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1561  nohup ./finale2019.sh >/dev/null 2>&1
+ 1562  ls joueurs2019/
+ 1563  ps
+ 1564  ps > kill.sh
+ 1565  emacs kill.sh
+ 1566  cat kill.sh | xargs kill
+ 1567  ps
+ 1568  ./finale2019.sh
+ 1569  ps
+ 1570  kill 22380
+ 1571  kill 22381
+ 1572  kill 22382
+ 1573  ls
+ 1574  ps
+ 1575  emacs finale2019.sh
+ 1576  nohup ./finale2019.sh >/dev/null 2>&1
+ 1577  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1578  ls
+ 1579  cd bin/
+ 1580  ls
+ 1581  rm*
+ 1582  rm *
+ 1583  ls
+ 1584  cd ..
+ 1585  ls
+ 1586  cd joueurs/
+ 1587  s
+ 1588  ls
+ 1589  cp 2019/3-avalam2i-2.c ./
+ 1590  cp 2019/5-vroum-2.c ./
+ 1591  cp 2019/9-mark5.c ./
+ 1592  cp 2019/14-kantaou2i-blitz.c ./
+ 1593  cp 2019/kantalam2i-blitz-2.c ./
+ 1594  ls
+ 1595  cd tou
+ 1596  cd tournoi
+ 1597  ls
+ 1598  emacs makefile
+ 1599  cd ..
+ 1600  cd tournoi/
+ 1601  ls
+ 1602  emacs tournoi2020-2.sh
+ 1603  emacs tournoi2020.sh
+ 1604  ls bin/
+ 1605  ls
+ 1606  nohup ./tournoi2020-2.sh >/dev/null 2>&1
+ 1607  ls -l
+ 1608  chmod a+x tournoi2020-2.sh
+ 1609  rm *~
+ 1610  nohup ./tournoi2020-2.sh >/dev/null 2>&1
+ 1611  ps
+ 1612  ps > kill.sh
+ 1613  emacs kill.sh 
+ 1614  cat kill.sh | xargs kill
+ 1615  ps
+ 1616  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1617  cd cmj/tournoi/
+ 1618  ls
+ 1619  source dyn.sh 
+ 1620  ps
+ 1621  ps a
+ 1622  ps ax
+ 1623  ls bin
+ 1624  ./bin/10-avalamHub.exe AH
+ 1625  bg
+ 1626  ./bin/10-avalamHub.exe AH
+ 1627  bg
+ 1628  ls
+ 1629  ls bin
+ 1630  ./bin/9-mark5.exe M5
+ 1631  bg
+ 1632  ps
+ 1633  kill 29112
+ 1634  ls
+ 1635  ./tournoi2020.sh 
+ 1636  ls ./bin/
+ 1637  cat finale2018.sh 
+ 1638  cat finale2019.sh 
+ 1639  ./bin/3-avalam2i-2.exe A2I
+ 1640  bg
+ 1641  ps
+ 1642  ps u
+ 1643  ps u | grep bin
+ 1644  ps u | grep bin | cut -d' ' -f2
+ 1645  ps u | grep bin | cut -d' ' -f2 | xargs kill 
+ 1646  ls
+ 1647  ps
+ 1648  ./tournoi2020.sh 
+ 1649  ls ./bin/
+ 1650  ./tournoi2020.sh 
+ 1651  cd ..
+ 1652  ls
+ 1653  cd ..
+ 1654  ls
+ 1655  cd cmj2019/
+ 1656  ls
+ 1657  cd include/
+ 1658  ls
+ 1659  cat moteur.h 
+ 1660  cd -
+ 1661  cd ..
+ 1662  cd cmj
+ 1663  ls
+ 1664  cd tournoi/
+ 1665  ps ax
+ 1666  ps u
+ 1667  ps u | grep bin | cut -d' ' -f2 | xargs kill 
+ 1668  ps
+ 1669  ls
+ 1670  ./tournoi2020.sh 
+ 1671  l
+ 1672  ./finale2018.sh 
+ 1673  cp joueurs2018/*.exe ./bin/
+ 1674  ./finale2018.sh 
+ 1675  cat finale2019.sh 
+ 1676  vi finale2019.sh 
+ 1677  ./finale2019.sh 
+ 1678  cp joueurs2019/*.exe bin/
+ 1679  ps
+ 1680  ./finale2019.sh 
+ 1681  ps
+ 1682  ps u | grep bin | cut -d' ' -f2 | xargs kill 
+ 1683  ps
+ 1684  echo 'ps u | grep bin | cut -d' ' -f2 | xargs kill ' > killps.sh
+ 1685  ps
+ 1686  rm bin/* 
+ 1687  cp joueurs2018/*.exe ./bin/
+ 1688  cp joueurs2019/*.exe ./bin/
+ 1689  ls
+ 1690  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1691  nohup ./finale2018.sh >/dev/null 2>&1
+ 1692  nohup ./finale2019.sh >/dev/null 2>&1
+ 1693  cd cmj
+ 1694  ls
+ 1695  p
+ 1696  ps
+ 1697  ls
+ 1698  source dyn.sh 
+ 1699  ls
+ 1700  ./bin/moteur.exe 1
+ 1701  ps
+ 1702  ./bin/moteur.exe 1
+ 1703  cd ../include/
+ 1704  ls
+ 1705  cat moteur.h 
+ 1706  vi moteur.h 
+ 1707  cd ..
+ 1708  ls
+ 1709  make clean
+ 1710  make 
+ 1711  cd tournoi/
+ 1712  ./bin/moteur.exe 1
+ 1713  ps
+ 1714  ./bin/moteur.exe 30
+ 1715  cd -
+ 1716  make clean
+ 1717  make
+ 1718  vi joueurs/makefile
+ 1719  emacs joueurs/makefile
+ 1720  make clean
+ 1721  make
+ 1722  cd -
+ 1723  ./bin/moteur.exe 30
+ 1724  bg
+ 1725  disown -h %1
+ 1726  ls
+ 1727  mv cmj/tournoi/web/archives/ ./archives_cmj/
+ 1728  cd archives_cmj/
+ 1729  ls
+ 1730  cd archives/
+ 1731  ls
+ 1732  mv * ../ 
+ 1733  ls
+ 1734  cd ..
+ 1735  ls
+ 1736  rmdir archives/
+ 1737  ls
+ 1738  mkdir tournoi_1
+ 1739  cp tournoi_final.zip tournoi_1/
+ 1740  cd tournoi_1/
+ 1741  ls
+ 1742  unzip tournoi_final.zip 
+ 1743  ls
+ 1744  cd tournoi_final/
+ 1745  ls
+ 1746  cd ..
+ 1747  ls
+ 1748  rm -r tournoi_1/
+ 1749  unzip tournoi_final.zip 
+ 1750  ls
+ 1751  mv tournoi_final tournoi_1_30s
+ 1752  rm -r tournoi_1_30s/data/*
+ 1753  ls 1s_tb/
+ 1754  ls
+ 1755  cp 30s_tournoi1/* tournoi_1_30s/data/
+ 1756  ls tournoi_1_30s/data/
+ 1757  ls
+ 1758  unzip tournoi_final.zip 
+ 1759  ls
+ 1760  mv tournoi_final tournoi_2_1s_tb
+ 1761  l
+ 1762  ls
+ 1763  rm -r tournoi_2_1s_tb/data/*
+ 1764  cp 1s_tb/* tournoi_2_1s_tb/data/
+ 1765  ls
+ 1766  unzip tournoi_final.zip 
+ 1767  ls
+ 1768  rm -r tournoi_final/data/* 
+ 1769  cp 30s_tb/* tournoi_final/data/
+ 1770  ls
+ 1771  mv tournoi_final tournoi_3_30s_tb
+ 1772  ls
+ 1773  su
+ 1774  ls
+ 1775  ls > index.html
+ 1776  emacs index.html 
+ 1777  ls
+ 1778  rm *~
+ 1779  ls
+ 1780  cd tournoi_1_30s/
+ 1781  ls
+ 1782  vi avalam-tournoi.html 
+ 1783  cd ../tournoi_2_1s_tb/
+ 1784  vi avalam-tournoi.html 
+ 1785  cd ../tournoi_3_30s_tb/
+ 1786  vi avalam-tournoi.html 
+ 1787  cd cmj
+ 1788  cd tournoi/
+ 1789  ls
+ 1790  cd web/
+ 1791  ls
+ 1792  cp -R data/ ../../../archives_cmj/30s_tous
+ 1793  cd ../../..
+ 1794  ls
+ 1795  cd archives_cmj/
+ 1796  ls
+ 1797  unzip tournoi_final.zip 
+ 1798  ls
+ 1799  mv tournoi_final tournoi_30s_tous
+ 1800  cd tournoi_30s_tous/
+ 1801  ls
+ 1802  rm -r data/*
+ 1803  ls
+ 1804  cd ..
+ 1805  ls
+ 1806  cp 30s_tous/* tournoi_30s_tous/data/
+ 1807  mv tournoi_30s_tous/ tournoi_4_30s_tous/
+ 1808  ls
+ 1809  emacs index.html 
+ 1810  cd ../cmj/tournoi/web/data/
+ 1811  ls -l
+ 1812  ls
+ 1813  cd ..
+ 1814  source dyn.sh 
+ 1815  ps
+ 1816  ps u
+ 1817  ps ax
+ 1818  ./bin/moteur.exe 120
+ 1819  bg
+ 1820  disown -h %1
+ 1821  cd cmj/tournoi/
+ 1822  ls
+ 1823  source dyn.sh 
+ 1824  ls
+ 1825  emacs finale2019.sh 
+ 1826  history  | grep nohu
+ 1827  nohup ./tournoi2020.sh >/dev/null 2>&1
+ 1828  nohup ./finale2019.sh >/dev/null 2>&1
+ 1829  cd cmj
+ 1830  ls
+ 1831  cd tournoi/
+ 1832  source dyn.sh 
+ 1833  ps
+ 1834  history | grep moteur
+ 1835  ./bin/moteur.exe 30
+ 1836  bg
+ 1837  history 
+ 1838  disown -h %1
+ 1839  cd archives_cmj/
+ 1840  ls
+ 1841  cp -R tournoi_4_30s_tous/* tournoi_5_120s_tous/
+ 1842  ls
+ 1843  cd tournoi_5_120s_tous/
+ 1844  ls
+ 1845  emacs avalam-tournoi.html 
+ 1846  rm -r data/* 
+ 1847  cd ../tournoi_4_30s_tous/
+ 1848  ls
+ 1849  emacs avalam-tournoi.html 
+ 1850  cd ..
+ 1851  ls
+ 1852  emacs index.html
+ 1853  cd tournoi_4_30s_tous/
+ 1854  emacs avalam-tournoi.html
+ 1855  cd ../..
+ 1856  ls
+ 1857  cd cmj
+ 1858  ls
+ 1859  cd tournoi/
+ 1860  source dyn.sh 
+ 1861  ps u
+ 1862  cp tournoi2020.sh finale2020.sh
+ 1863  emacs finale2020.sh 
+ 1864  nohup ./finale2020.sh >/dev/null 2>&1
+ 1865  cd cmj
+ 1866  ls
+ 1867  cd tournoi/
+ 1868  ls
+ 1869  source dyn.sh 
+ 1870  ./finale2020.sh
+ 1871  ps
+ 1872  kill 5703
+ 1873  kill 5704
+ 1874  nohup ./finale2020.sh >/dev/null 2>&1
+ 1875  cd cmj
+ 1876  l
+ 1877  cp -r tournoi/web/data/ ../archives_cmj/tournoi_finale_1
+ 1878  cd joueurs/
+ 1879  ls
+ 1880  emacs makefile
+ 1881  cd ..
+ 1882  cd tournoi/
+ 1883  ls
+ 1884  cat finale2020.sh
+ 1885  emacs finale2020.sh
+ 1886  cd ..
+ 1887  make clean
+ 1888  make
+ 1889  cd tournoi/
+ 1890  ./bin/moteur.exe 1
+ 1891  source dyn.sh 
+ 1892  ./bin/moteur.exe 1
+ 1893  ps
+ 1894  ./bin/moteur.exe 30
+ 1895  bg
+ 1896  disown -h %1
+ 1897  cd archives_cmj/
+ 1898  ls
+ 1899  cp -r ../cmj/tournoi/web/data/ data_finale_2
+ 1900  ls tournoi_finale_1/
+ 1901  ls
+ 1902  mv tournoi_finale_1/ data_finale_1
+ 1903  unzip tournoi_final.zip 
+ 1904  ls
+ 1905  mv tournoi_final tournoi_6_finale_1
+ 1906  unzip tournoi_final.zip 
+ 1907  ls
+ 1908  mv tournoi_final tournoi_7_finale_2
+ 1909  unzip tournoi_final.zip 
+ 1910  ls
+ 1911  mv tournoi_final tournoi_8_partie_vincent_avalamafache
+ 1912  rm tournoi_6_finale_1/data/* 
+ 1913  cp -r ./data_finale_1/* ./tournoi_6_finale_1/data/
+ 1914  ls
+ 1915  rm tournoi_7_finale_2/data/* 
+ 1916  cp -r ./data_finale_2/* ./tournoi_7_finale_2/data/
+ 1917  rm tournoi_8_partie_vincent_avalamafache/data/* 
+ 1918  emacs index.html
+ 1919  ls >> index.html
+ 1920  emacs index.html
+ 1921  cd ..
+ 1922  ls
+ 1923  cd -
+ 1924  cd tournoi_6_finale_1/
+ 1925  emacs avalam-tournoi.html 
+ 1926  cd ../tournoi_7_finale_2/
+ 1927  emacs avalam-tournoi.html 
+ 1928  cd ../tournoi_8_partie_vincent_avalamafache/
+ 1929  emacs avalam-tournoi.html 
+ 1930  cd ..
+ 1931  cd ../cmj
+ 1932  ls
+ 1933  cd tournoi/
+ 1934  ls
+ 1935  cd web/
+ 1936  ls
+ 1937  emacs avalam-tournoi.html 
+ 1938  ls
+ 1939  ls
+ 1940  cd medias/
+ 1941  ls
+ 1942  cat index.html
+ 1943  head index.html
+ 1944  emacs index.html 
+ 1945  ls
+ 1946  cd medias/
+ 1947  ls
+ 1948  cp -R g3/mediaplayer/ g3_2021/
+ 1949  ls
+ 1950  ls g3_2021/ >> index.html
+ 1951  ls ccr_2020 >> index.html
+ 1952  emacs index.html
+ 1953  ls
+ 1954  cd medias/
+ 1955  ls
+ 1956  cd ..
+ 1957  ls
+ 1958  ls topo/
+ 1959  ls topo/ >> medias/index.html
+ 1960  cd medias/
+ 1961  ls
+ 1962  cp index.html topo.html
+ 1963  vi index.html
+ 1964  vi topo.html
+ 1965  emacs topo.html
+ 1966  cd ..
+ 1967  ls
+ 1968  mv topo/ medias/
+ 1969  cd medias/
+ 1970  ls
+ 1971  vi topo
+ 1972  vi topo.html
+ 1973  cd medias/
+ 1974  ls
+ 1975  ls ccr2021/
+ 1976  ls ccr2021/ >> index.html
+ 1977  emacs index.html
+ 1978  ls
+ 1979  ls ccr_2020/
+ 1980  ls g3_2021/
+ 1981  cp -r g3_2021/mediaplayer/ ./ccr2021/
+ 1982  emacs index.html
+ 1983  cd ccr2021/
+ 1984  ls
+ 1985  rm -r MEDIA170601115442433/
+ 1986  ls
+ 1987  cd cmj
+ 1988  ls
+ 1989  cd ..
+ 1990  ls
+ 1991  tar -zcvf archivecmj2020.tar.gz cmj2020/*
+ 1992  l
+ 1993  ls
+ 1994  tar -zcvf archivecmj2019.tar.gz cmj2019/*
+ 1995  ls
+ 1996  tar -zcvf archivecmj2018.tar.gz cmj2018/*
+ 1997  ls
+ 1998  mkdir cmj2021
+ 1999  cat /etc/apache2/sites-available/
+ 2000  cat /etc/apache2/sites-available/020-cmj.conf 
+ 2001  ls
+ 2002  tar -zcvf archivecmj.tar.gz cmj/*
+ 2003  ls
+ 2004  cd cmjj
+ 2005  cd cmj
+ 2006  ls
+ 2007  cd ..
+ 2008  ls
+ 2009  cd cmj2021/
+ 2010  ls
+ 2011  unzip avalam-2021.zip avalam-2021.zip 
+ 2012  unzip avalam-2021.zip
+ 2013  ls
+ 2014  cd ..
+ 2015  ls
+ 2016  mv cmj cmj_bak
+ 2017  ls
+ 2018  mv cmj2021/ cmj
+ 2019  ls
+ 2020  cd cmj
+ 2021  make clean
+ 2022  make
+ 2023  ls
+ 2024  cd joueurs
+ 2025  ls
+ 2026  emacs makefile 
+ 2027  cd ..
+ 2028  make clean
+ 2029  make
+ 2030  ls
+ 2031  cd tournoi/
+ 2032  ls
+ 2033  history > hs2021

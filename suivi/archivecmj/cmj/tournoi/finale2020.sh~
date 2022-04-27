@@ -1,0 +1,15 @@
+#! /bin/sh 
+
+#	./joueur$numJ.exe "Joueur $numJ" &
+
+
+./bin/3-avalamaFache.exe "Avalamafache" &
+sleep 2
+./bin/7-patrickBalkalam.exe "PatrickBalkalam" &
+sleep 2
+./bin/11-hakunamavalam.exe "Hakunamavalam" &
+sleep 2
+./bin/13-coronAvalam.exe "CoronAvalam" &
+
+
+
