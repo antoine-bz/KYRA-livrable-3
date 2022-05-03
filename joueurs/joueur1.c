@@ -19,13 +19,13 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 /////////////EXEMPLES DE STRAT////////////////////////////
 
 
-// STRAT isolement
+// STRAT 3 isolement 1 voisin
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
 
-		voisins = getVoisins(o);
-		nbvois=nbVoisins(o);
+		voisins = getVoisins(d);
+		nbvois=nbVoisins(d);
 
 		if(nbvois==1 && currentPosition.cols[o].couleur==myColor){
 			ecrireIndexCoup(i);
@@ -33,33 +33,46 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}	
 	}
 
-// STRAT boucler tour mycolor -> ennemi
-	for(i=0;i<listeCoups.nb; i++) {
-		o = listeCoups.coups[i].origine; 
-		d = listeCoups.coups[i].destination;
-
-		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
-		}
-	}	
-// STRAT boucler tour v2 
-	for(i=0;i<listeCoups.nb; i++) {
-		o = listeCoups.coups[i].origine; 
-		d = listeCoups.coups[i].destination;
-
-		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
-		}
-	}	
-// STRAT 
+// STRAT isolement adversaire
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
 
 		voisins = getVoisins(d);
 		nbvois=nbVoisins(d);
+
+		if(nbvois<=4 && currentPosition.cols[o].couleur==myColor && ){
+			ecrireIndexCoup(i);
+			return;
+		}	
+	}
+
+// STRAT 8 boucler tour mycolor -> ennemi
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
+			ecrireIndexCoup(i);
+			return;
+		}
+	}	
+
+// STRAT 8 boucler tour v2 
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
+			ecrireIndexCoup(i);
+			return;
+		}
+	}	
+	
+// STRAT 2 prendre tour de 2 
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[is].destination;
 
 		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==3){
 			ecrireIndexCoup(i);
@@ -95,7 +108,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}	
 	}
 
-// STRAT prendre pions adverses
+// STRAT 5 prendre pions adverses
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
@@ -107,7 +120,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}
 	}
 
-// STRAT empiler pions adverses
+// STRAT 1 empiler pions adverses
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
@@ -119,5 +132,6 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}
 	}
 
-}
 
+	
+} //fin de la fonction
