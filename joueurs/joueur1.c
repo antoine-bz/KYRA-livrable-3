@@ -48,8 +48,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		nbvois=nbVoisins(d);
 
 		if(nbvois==1 && currentPosition.cols[o].couleur==myColor){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -71,8 +73,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}
 
 		if(nbv==0 && currentPosition.cols[o].couleur==myColor){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -92,8 +96,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 			}
 		}
 		if(nbvois<=4 && currentPosition.cols[o].couleur==myColor && nbv>=3){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -105,8 +111,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		d = listeCoups.coups[i].destination;
 
 		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==3){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -119,8 +127,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		nbvois=nbVoisins(d);
 
 		if(nbvois==1 && currentPosition.cols[o].couleur==myColor&& currentPosition.cols[d].couleur!=myColor){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -145,8 +155,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 		if(currentPosition.cols[o].couleur!=myColor && currentPosition.cols[d].couleur!=myColor)
 		if (currentPosition.cols[o].nb==1 && currentPosition.cols[d].nb==1){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}
 	}
 
@@ -157,8 +169,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 		if(currentPosition.cols[d].couleur!=myColor)
 		if (currentPosition.cols[o].nb+currentPosition.cols[d].nb<4){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}
 	}
 
@@ -176,8 +190,7 @@ int danger(int indice_coup, T_ListeCoups listeCoups){
 	for (int i = 0; i < nbVoisins; i++)
 	{
 		if(currentPosition.cols[o].nb+currentPosition.cols[d].nb+currentPosition.cols[i].nb==5)
-			return 0;
+			return 1;
 	}
-
-	return 1;
+	return 0;
 }
