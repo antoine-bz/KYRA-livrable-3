@@ -17,29 +17,68 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 /////////////EXEMPLES DE STRAT////////////////////////////
 
-// STRAT 8 boucler tour mycolor -> ennemi
+// STRAT 8 boucler tour mycolor -> ennemi MAL BON OK
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
 
-		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
+		if((currentPosition.cols[o].couleur==myColor) 
+		&& (currentPosition.cols[d].couleur!=myColor) 
+		&& (currentPosition.cols[o].nb+currentPosition.cols[d].nb==5)){
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}
 	}	
-
-// STRAT 8 boucler tour v2 
+// STRAT 8 boucler tour v2 MAL BON OK
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
 
 		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}
 	}	
 
-// STRAT 3 isolement 1 voisin
+// STRAT
+	for(i=0;i<listeCoups.nb; i++) {
+		int nbvois1,nbvois2;
+
+		T_Voisins voisins1;
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		if(currentPosition.cols[o].couleur!=myColor && currentPosition.cols[d].couleur!=myColor){
+			voisins = getVoisins(o);
+			nbvois=nbVoisins(o);
+			for (j = 0; j < nbvois; j++){
+
+				if(currentPosition.cols[voisins.cases[j]].couleur==myColor){
+
+					voisins1 = getVoisins(voisins.cases[j]);
+					nbvois1=nbVoisins(voisins.cases[j]);
+					for (int k = 0; k < nbvois1; k++)
+					{
+						if(currentPosition.cols[voisins1.cases[j]].couleur==myColor)
+						nbvois2++;
+					}
+					if (nbvois2 == 0){
+						if(!danger(i, listeCoups,currentPosition)){
+							ecrireIndexCoup(i);
+							return;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+
+// STRAT 3 isolement 1 voisin ennemies
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
@@ -47,14 +86,46 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		voisins = getVoisins(d);
 		nbvois=nbVoisins(d);
 
-		if(nbvois==1 && currentPosition.cols[o].couleur==myColor){
+		nbv=0;
+		
+		for(j=0; j<nbvois;j++){//compte le nb de vois ennemies par rapport a la destination
+			vois = voisins.cases[j];
+			if (currentPosition.cols[vois].couleur!=myColor){
+				nbv++;
+			}
+		}
+//nbv =nombre de vois de couleur adverse
+		if(currentPosition.cols[d].couleur!=myColor)
+		if(nbv==0 && currentPosition.cols[o].couleur==myColor){
 			if(!danger(i, listeCoups,currentPosition)){
 				ecrireIndexCoup(i);
 				return;
 			}
 		}	
 	}
+// STRAT 4 isolement adversaire
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
 
+		voisins = getVoisins(d);
+		nbvois=nbVoisins(d);
+		nbv=0;
+
+		for(j=0; j<nbvois;j++){
+			vois = voisins.cases[j];
+			if (currentPosition.cols[vois].couleur==myColor){
+				nbv++;
+			}
+		}
+		if(currentPosition.cols[d].couleur!=myColor)
+		if(nbvois<=4 && currentPosition.cols[o].couleur==myColor && nbv>=3){
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
+		}	
+	}
 // STRAT 3 isolement 1 voisin
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
@@ -79,6 +150,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 			}
 		}	
 	}
+
 
 // STRAT 4 isolement adversaire
 	for(i=0;i<listeCoups.nb; i++) {
@@ -143,8 +215,10 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		nbvois=nbVoisins(d);
 
 		if(nbvois==1 && currentPosition.cols[o].couleur==myColor){
-			ecrireIndexCoup(i);
-			return;
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
 		}	
 	}
 
@@ -162,7 +236,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}
 	}
 
-// STRAT 1 empiler pions adverses
+// STRAT 1 empiler pions adverses 
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
@@ -195,7 +269,10 @@ int danger(int indice_coup, T_ListeCoups listeCoups, T_Position currentPosition)
 	{
 		a=voisins.cases[i];
 		if(currentPosition.cols[o].nb+currentPosition.cols[d].nb+currentPosition.cols[a].nb==5)
-			return 1;
+			return 1;	
 	}
+	if((currentPosition.evolution.malusJ==o || currentPosition.evolution.malusJ==d )
+	|| (currentPosition.evolution.malusR==o || currentPosition.evolution.malusR==d ))
+		return 1;
 	return 0;
 }
