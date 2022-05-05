@@ -9,6 +9,7 @@
 #define ROU 2
 
 #define NBCASES 48
+#define UNKNOWN 255
 
 #define COLNAME(c) ((c==ROU) ? "rouge" : "jaune")
 
@@ -19,6 +20,10 @@
 #define STR_COLS "\"cols\""
 
 #define STR_FEN "\"fen\""
+#define STR_BONUS_J "\"bonusJ\""
+#define STR_BONUS_R "\"bonusR\""
+#define STR_MALUS_J "\"malusJ\""
+#define STR_MALUS_R "\"malusR\""
 #define STR_SCORE_J "\"scoreJ\""
 #define STR_SCORE_J5 "\"scoreJ5\""
 #define STR_SCORE_R "\"scoreR\""
@@ -85,14 +90,22 @@ typedef struct {
 } T_Voisins; 
 
 typedef struct {
-	octet nb; 			// nb d'elts dans la colonne 
+	octet nb; 	// nb d'elts dans la colonne 
 	octet couleur;  // couleur du sommet 
 } T_Colonne; 
+
+typedef struct { 
+	octet bonusJ;
+	octet malusJ; 
+	octet bonusR;
+	octet malusR; 
+} T_Evolution;
 
 typedef struct { 
 	octet trait; 
 	// octet numCoup; // A ajouter
 	T_Colonne cols[NBCASES];
+	T_Evolution evolution;
 } T_Position;
 
 typedef struct {
@@ -115,6 +128,6 @@ void afficherListeCoups(T_ListeCoups l);
 T_Position jouerCoup(T_Position p, octet origine, octet destination) ;
 T_ListeCoups getCoupsLegaux(T_Position p) ; 
 T_Score evaluerScore(T_Position p);
-void afficherScore(T_Score s);
-octet estValide(T_Position p, octet origine, octet destination); // ajout 12/05/2021
+void afficherScore(T_Score s); 
 
+octet estValide(T_Position p, octet origine, octet destination);
