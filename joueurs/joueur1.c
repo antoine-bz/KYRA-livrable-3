@@ -5,6 +5,7 @@
 #include "avalam.h"
 #include "moteur.h"
 
+int danger(int indice_coup, T_ListeCoups listeCoups);
 
 void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 	// Cette fonction peut appeler la fonction ecrireIndexCoup(coupChoisi);
@@ -16,6 +17,27 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 /////////////EXEMPLES DE STRAT////////////////////////////
 
+// STRAT 8 boucler tour mycolor -> ennemi
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
+			ecrireIndexCoup(i);
+			return;
+		}
+	}	
+
+// STRAT 8 boucler tour v2 
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
+			ecrireIndexCoup(i);
+			return;
+		}
+	}	
 
 // STRAT 3 isolement 1 voisin
 	for(i=0;i<listeCoups.nb; i++) {
@@ -41,7 +63,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 		nbv=0;
 		
-		for(j=0; j<nbvois;j++){
+		for(j=0; j<nbvois;j++){//compte le nb de vois ennemies par rapport a la destination
 			vois = voisins.cases[j];
 			if (currentPosition.cols[vois].couleur!=myColor){
 				nbv++;
@@ -75,27 +97,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}	
 	}
 
-// STRAT 8 boucler tour mycolor -> ennemi
-	for(i=0;i<listeCoups.nb; i++) {
-		o = listeCoups.coups[i].origine; 
-		d = listeCoups.coups[i].destination;
 
-		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[d].couleur!=myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
-		}
-	}	
-
-// STRAT 8 boucler tour v2 
-	for(i=0;i<listeCoups.nb; i++) {
-		o = listeCoups.coups[i].origine; 
-		d = listeCoups.coups[i].destination;
-
-		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==5){
-			ecrireIndexCoup(i);
-			return;
-		}
-	}	
 	
 // STRAT 2 prendre tour de 2 
 	for(i=0;i<listeCoups.nb; i++) {
@@ -122,7 +124,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		}	
 	}
 
-// STRAT 
+// STRAT isolement v4060
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
 		d = listeCoups.coups[i].destination;
@@ -130,7 +132,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 		voisins = getVoisins(d);
 		nbvois=nbVoisins(d);
 
-		if(nbvois<2 && currentPosition.cols[o].couleur==myColor){
+		if(nbvois==1 && currentPosition.cols[o].couleur==myColor){
 			ecrireIndexCoup(i);
 			return;
 		}	
@@ -163,3 +165,19 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 	
 } //fin de la fonction
+
+int danger(int indice_coup, T_ListeCoups listeCoups){
+	o = listeCoups.coups[indice_coup].origine; 
+	d = listeCoups.coups[indice_coup].destination;
+		
+	voisins = getVoisins(d);
+	nbvois=nbVoisins(d);
+	
+	for (int i = 0; i < nbVoisins; i++)
+	{
+		if(currentPosition.cols[o].nb+currentPosition.cols[d].nb+currentPosition.cols[i].nb==5)
+			return 0;
+	}
+
+	return 1;
+}
