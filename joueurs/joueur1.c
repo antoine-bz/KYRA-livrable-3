@@ -45,8 +45,8 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 	}	
 
 // STRAT
-	for(i=0;i<listeCoups.nb; i++) {
-		int nbvois1,nbvois2;
+/*	for(i=0;i<listeCoups.nb; i++) {
+		int nbvois1=0,nbvois2=0;
 
 		T_Voisins voisins1;
 		o = listeCoups.coups[i].origine; 
@@ -76,8 +76,49 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 			}
 		}
 		
+	}*/
+// STRAT 3 isolement 1 voisin ennemies BON MAL OK
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+
+		voisins = getVoisins(d);
+		nbvois=nbVoisins(d);
+
+		nbv=0;
+		
+		for(j=0; j<nbvois;j++){//compte le nb de vois ennemies par rapport a la destination
+			vois = voisins.cases[j];
+			if (currentPosition.cols[vois].couleur!=myColor){
+				nbv++;
+			}
+		}
+//nbv =nombre de vois de couleur adverse
+		if((currentPosition.evolution.bonusJ==o || currentPosition.evolution.bonusJ==d )
+		|| (currentPosition.evolution.bonusR==o || currentPosition.evolution.bonusR==d ))
+			if(currentPosition.cols[d].couleur!=myColor)
+				if(nbv==0 && currentPosition.cols[o].couleur==myColor){
+					if(!danger(i, listeCoups,currentPosition)){
+						ecrireIndexCoup(i);
+						return;
+					}
+				}	
+	}
+// STRAT 2 prendre tour de 2 
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+		if((currentPosition.evolution.bonusJ==o || currentPosition.evolution.bonusJ==d )
+		|| (currentPosition.evolution.bonusR==o || currentPosition.evolution.bonusR==d ))
+		if(currentPosition.cols[o].couleur==myColor && currentPosition.cols[o].nb+currentPosition.cols[d].nb==3){
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
+		}	
 	}
 
+/////strat 3 4 version focus adverse
 // STRAT 3 isolement 1 voisin ennemies
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
@@ -126,6 +167,8 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 			}
 		}	
 	}
+
+///////
 // STRAT 3 isolement 1 voisin
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
@@ -189,7 +232,36 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 			}
 		}	
 	}
+// STRAT contre-isolement BON MAL
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
 
+		voisins = getVoisins(d);
+		nbvois=nbVoisins(d);
+		if((currentPosition.evolution.bonusJ==o || currentPosition.evolution.bonusJ==d )
+		|| (currentPosition.evolution.bonusR==o || currentPosition.evolution.bonusR==d ))
+		if(nbvois==1 && currentPosition.cols[o].couleur==myColor&& currentPosition.cols[d].couleur!=myColor){
+			if(!danger(i, listeCoups,currentPosition)){
+				ecrireIndexCoup(i);
+				return;
+			}
+		}	
+	}
+// STRAT 5 prendre pions adverses
+	for(i=0;i<listeCoups.nb; i++) {
+		o = listeCoups.coups[i].origine; 
+		d = listeCoups.coups[i].destination;
+		if((currentPosition.evolution.bonusJ==o || currentPosition.evolution.bonusJ==d )
+		|| (currentPosition.evolution.bonusR==o || currentPosition.evolution.bonusR==d ))
+			if(currentPosition.cols[o].couleur!=myColor && currentPosition.cols[d].couleur!=myColor)
+				if (currentPosition.cols[o].nb==1 && currentPosition.cols[d].nb==1){
+					if(!danger(i, listeCoups,currentPosition)){
+						ecrireIndexCoup(i);
+						return;
+					}
+				}
+	}
 // STRAT contre-isolement
 	for(i=0;i<listeCoups.nb; i++) {
 		o = listeCoups.coups[i].origine; 
