@@ -328,7 +328,7 @@ void choisirCoup(T_Position currentPosition, T_ListeCoups listeCoups) {
 
 int danger(int indice_coup, T_ListeCoups listeCoups, T_Position currentPosition){
 	octet o,d,vois,a;
-	int nbvois;
+	int nbvois,i;
 	T_Voisins voisins;
 
 	o = listeCoups.coups[indice_coup].origine; 
@@ -336,8 +336,8 @@ int danger(int indice_coup, T_ListeCoups listeCoups, T_Position currentPosition)
 		
 	voisins = getVoisins(d);
 	nbvois=nbVoisins(d);
-	
-	for (int i = 0; i < nbvois; i++)
+	if(nbvois!=1)
+	for ( i = 0; i < nbvois; i++)
 	{
 		a=voisins.cases[i];
 		if(currentPosition.cols[o].nb+currentPosition.cols[d].nb+currentPosition.cols[a].nb==5)
